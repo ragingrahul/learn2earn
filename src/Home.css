@@ -1,0 +1,21 @@
+.gradHeader {
+    background-image: radial-gradient(
+        circle at 100% 100%,
+        rgba(216, 144, 142, 0.5),
+        rgba(195, 119, 102, 0) 75%
+      ),
+      radial-gradient(
+        circle at 100% 0,
+        rgba(242, 189, 182, 0.1),
+        rgba(181, 0, 16, 0.1)
+      ),
+      linear-gradient(125deg, #090E3A, #02666D, #000000);
+      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    color: white;
+    gap: 5rem;
+    min-height:30vh;
+}

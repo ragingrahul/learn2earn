@@ -13,8 +13,45 @@
   }
 }
 
+.bgGrad{
+  background: url("../images/gradient.jpg") center bottom no-repeat;
+  background-size: cover;
+  background-position:50% 50%;
+}
+
+.gradHighlight {
+  position: relative;
+  z-index: 1;
+}
+
+.gradHighlight::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+    circle at 100% 100%,
+    rgba(216, 144, 142, 0.5),
+    rgba(195, 119, 102, 0) 75%
+  ),
+  radial-gradient(
+    circle at 100% 0,
+    rgba(242, 189, 182, 0.1),
+    rgba(181, 0, 16, 0.1)
+  ),
+  linear-gradient(125deg, #090E3A, #02666D, #000000);
+  opacity: 0.4;
+  filter: saturate(1.5) brightness(1.1);
+}
+
+
+
+
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
