@@ -17,7 +17,7 @@ function App() {
               <div className="max-w-[650px]">
                 <h1 className="text-8xl">
                   Get{" "}
-                  <span class="gradHighlight after:rounded-xl pr-4 pl-4 italic">
+                  <span class="gradHighlight pr-4 pl-4 italic">
                     Rewarded
                   </span>
                 </h1>

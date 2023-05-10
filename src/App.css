@@ -45,6 +45,7 @@
   linear-gradient(125deg, #090E3A, #02666D, #000000);
   opacity: 0.4;
   filter: saturate(1.5) brightness(1.1);
+  border-radius: 10px;
 }
 
 
