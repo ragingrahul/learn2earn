@@ -49,9 +49,7 @@
 }
 
 .App-header {
-  /* background-color: #282c34; */
-  height: 100vh;
-  max-height: 1000px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;

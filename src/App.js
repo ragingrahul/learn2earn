@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <div className="bgGrad">
         <TopBar />
-        <header className="App-header">
+        <header className="App-header h-[100vh]">
           <div className="grid items-center lg:flex gap-2 justify-center p-[5vw]">
             <div className="flex flex-col gap-8 text-left">
               <div className="md:max-w-[650px] sm:max-w-[80vw]">

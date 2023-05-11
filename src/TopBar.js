@@ -8,10 +8,10 @@ function TopBar() {
     <>
       <Navbar fixed="top" bg="dark" className='bg-transparent backdrop-blur-lg' variant="dark">
         <Container className='flex justify-between font-semibold'>
-          <Navbar.Brand href="/">Learn2Earn</Navbar.Brand>
+          <Navbar.Brand href="#/">Learn2Earn</Navbar.Brand>
           <Nav className="mr-0">
             <Nav.Link href="#home">Courses</Nav.Link>
-            <Nav.Link href="#features">Specializations</Nav.Link>
+            <Nav.Link href="#/specials">Specializations</Nav.Link>
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
