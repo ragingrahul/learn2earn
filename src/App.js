@@ -26,7 +26,7 @@ function App() {
               </div>
               <div className="flex flex-row gap-10">
                 <button className="gradHighlight p-[0.9rem] text-lg lg:text-2xl font-semibold">
-                  <div className="flex flex-row items-center gap-2">
+                  <div className="flex flex-row items-center gap-2" onClick={() => window.location.href = "#/courses"}>
                     Go to Courses <ArrowRightCircleFill />
                   </div>
                 </button>
