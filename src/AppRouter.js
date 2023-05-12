@@ -4,6 +4,7 @@ import { HashRouter as Router } from 'react-router-dom';
 import { createBrowserHistory } from "history";
 import App from "./App.js";
 import Special from "./Special.js";
+import Courses from "./Courses.js";
 
 const history = createBrowserHistory();
 
@@ -13,6 +14,7 @@ function AppRouter() {
     <Router basename='/' history={history}>
         <Routes>
           <Route path="/specials" element={<Special/>} />
+          <Route path="/courses" element={<Courses/>} />
           <Route path="/" element={<App/>} />
         </Routes>
     </Router>

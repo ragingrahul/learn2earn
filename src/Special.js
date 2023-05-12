@@ -10,9 +10,6 @@ import {
   Search,
   ArrowRightCircleFill,
   Reception4,
-  Reception3,
-  Reception2,
-  Person,
   PersonFill,
   PlusCircleFill,
 } from "react-bootstrap-icons";
@@ -63,7 +60,9 @@ function Special() {
         <TopBar />
         <br></br>
         <header className="App-header">
-          <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 rounded-xl drop-shadow-2xl bg-gray-950 p-4">
+          <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
+          <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">Specializations</div>
+          <div className="bg-gray-950 p-4 rounded-xl">
             <div>
               <div className="max-w-[500px]">
                 <InputGroup className="mb-3">
@@ -87,7 +86,11 @@ function Special() {
                   />
                   <div className="flex flex-col gap-2.5">
                     <div className="flex items-center justify-between mb-1 text-lg font-bold text-left 2xl:text-2xl">
+                      <div className="rounded-2xl" style={{ background: gradient(course.name) }}>
+                      <div className="pr-2 pl-2 pt-1 pb-1 rounded-2xl bg-gray-800 bg-opacity-90">
                       {course.name}
+                      </div>
+                      </div>
                       <button>
                         <PlusCircleFill />
                       </button>
@@ -148,60 +151,9 @@ function Special() {
               ))}
             </div>
           </div>
-          {/* <div className="grid items-center lg:flex gap-2 justify-center p-[5vw]">
-            <div className="flex flex-col gap-8 text-left">
-              <div className="md:max-w-[650px] sm:max-w-[80vw]">
-                <h1 className="text-6xl lg:text-8xl">
-                  Get{" "}
-                  <span class="gradHighlight pr-4 pl-4 italic">Rewarded</span>
-                </h1>
-                <h1 className="text-6xl lg:text-8xl">for Learning</h1>
-                <h4 className="lg:text-3xl">
-                  Learn2Earn is an interesting platform that will teach you in
-                  more an interactive way
-                </h4>
-              </div>
-              <div className="flex flex-row gap-10">
-                <button className="gradHighlight p-[0.9rem] text-lg lg:text-2xl font-semibold">
-                  <div className="flex flex-row items-center gap-2">
-                    Go to Courses <ArrowRightCircleFill />
-                  </div>
-                </button>
-                <button className="gradHighlight p-[0.9rem] text-lg lg:text-2xl font-semibold">
-                  <div className="flex flex-row items-center gap-2">
-                    Go to Specializations <ArrowRightCircleFill />
-                  </div>
-                </button>
-              </div>
-            </div>
-            <div className="flex justify-center">
-            <img src={logo} className="App-logo" alt="logo" />
-            </div>
-          </div> */}
+          </div>
         </header>
       </div>
-      {/* <div className="gradHeader max-h-[300px] gap-5 md:gap-15 lg:gap-20 lg:h-[25vh] p-[1vw]">
-        <div>
-          <div className="font-bold md:text-lg">Students Helped</div>
-          <div className="text-2xl font-bold">20,000+</div>
-        </div>
-        <div>
-          <div className="font-bold md:text-lg">Courses</div>
-          <div className="text-2xl font-bold">150+</div>
-        </div>
-        <div>
-          <div className="font-bold md:text-lg">Specializations</div>
-          <div className="text-2xl font-bold">50+</div>
-        </div>
-        <div>
-          <div className="font-bold md:text-lg">Instructors</div>
-          <div className="text-2xl font-bold">100+</div>
-        </div>
-        <div>
-          <div className="font-bold md:text-lg">Total Redeemed</div>
-          <div className="text-2xl font-bold">$1.52M</div>
-        </div>
-      </div> */}
     </div>
   );
 }
