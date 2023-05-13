@@ -12,7 +12,7 @@ function TopBar() {
           <Nav className="mr-0">
             <Nav.Link href="#/courses">Courses</Nav.Link>
             <Nav.Link href="#/specials">Specializations</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
+            <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           </Nav>
           <Nav>
           <Nav.Link href="#login">Sign In</Nav.Link>

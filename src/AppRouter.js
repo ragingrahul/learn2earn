@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 import App from "./App.js";
 import Special from "./Special.js";
 import Courses from "./Courses.js";
+import Dashboard from "./Dashboard.js";
 
 const history = createBrowserHistory();
 
@@ -15,6 +16,7 @@ function AppRouter() {
         <Routes>
           <Route path="/specials" element={<Special/>} />
           <Route path="/courses" element={<Courses/>} />
+          <Route path="/dashboard" element={<Dashboard/>} />
           <Route path="/" element={<App/>} />
         </Routes>
     </Router>
