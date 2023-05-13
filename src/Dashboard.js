@@ -84,8 +84,8 @@ function Dashboard() {
                       <div className="text-4xl font-semibold">$134.51</div>
                     </div>
                     <div className="bg-black rounded-xl flex flex-col text-left justify-center p-4">
-                      <div className="text-lg">Courses Completed</div>
-                      <div className="text-4xl font-semibold">23</div>
+                      <div className="text-lg">Next Payout</div>
+                      <div className="text-4xl font-semibold">2<span className="ml-2 text-xl">/ 10 Modules</span></div>
                     </div>
                   </div>
                 </div>

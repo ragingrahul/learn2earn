@@ -4,7 +4,7 @@ import ActivityCalendar from 'react-activity-calendar';
 function Heatmap() {
   return (
     <ActivityCalendar
-      blockMargin={5}
+      blockMargin={7}
       color="#0DAEFF"
       data={[
         {
@@ -611,6 +611,7 @@ function Heatmap() {
         light: ['hsl(0, 0%, 92%)', 'firebrick'],
         dark: ['#333', 'rgb(214, 16, 174)'],
       }}
+      blockSize={18}
     />
   )
 }
