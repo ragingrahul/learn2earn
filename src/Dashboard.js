@@ -38,7 +38,7 @@ function Dashboard() {
         <TopBar />
         <br></br>
         <header className="App-header">
-          <div className="w-fit sm:w-[80vw] min-h-[90vh] max-w-[1700px] mt-[3.5rem] md:mt-[1rem]  h-full flex flex-col gap-3 drop-shadow-2x">
+          <div className="w-fit sm:w-[80vw] min-h-[90vh] max-w-[1400px] mt-[3.5rem] md:mt-[1rem] h-full flex flex-col gap-3 drop-shadow-2x">
             <div className="text-left font-semibold italic w-fit">
               Your Dashboard
             </div>
