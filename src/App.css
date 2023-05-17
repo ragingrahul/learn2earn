@@ -13,6 +13,11 @@
   }
 }
 
+
+.toast-header .btn-close{
+  display: none;
+}
+
 .bgGrad {
   background: url("../images/gradient.jpg") center bottom no-repeat;
   background-size: cover;
