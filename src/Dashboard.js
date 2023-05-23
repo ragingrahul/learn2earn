@@ -38,7 +38,7 @@ function Dashboard() {
                   <div className="text-xs text-green-800 bg-green-200 font-semibold px-1.5 rounded-xl py-0.5">
                     Connected
                   </div>
-                  <div className="font-medium">Wallet: {reduxStore.walletAdd.address}</div>
+                  <div className="font-medium">Wallet: {reduxStore.walletAdd.address.slice(0, 4)}...{reduxStore.walletAdd.address.slice(-4, )} </div>
                 </div>
               )}
             </div>

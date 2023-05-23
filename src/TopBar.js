@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addWallet, removeWallet } from "./redux/actions";
 import Toast from "react-bootstrap/Toast";
 import ToastContainer from "react-bootstrap/ToastContainer";
+import { XCircleFill } from "react-bootstrap-icons";
 
 function TopBar() {
   const dispatch = useDispatch();
@@ -113,8 +114,8 @@ function TopBar() {
                 Connect Wallet
               </Nav.Link>
             ) : (
-              <Nav.Link onClick={() => removeAccount()}>
-                Disconnect Wallet
+              <Nav.Link onClick={() => removeAccount()} className="!flex !gap-2 items-center">
+              {reduxStore.walletAdd.address.slice(0, 4)}...{reduxStore.walletAdd.address.slice(-4, )}   <XCircleFill/> 
               </Nav.Link>
             )}
           </Nav>
