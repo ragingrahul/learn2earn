@@ -52,7 +52,7 @@ function TopBar() {
 
   function displayNotification(mes) {
     console.log(mes)
-    if (error == false) {
+    if (error === false) {
       if (reduxStore.walletAdd.address) {
         return (
           <div className="text-xs text-green-800 bg-green-200 font-semibold px-1.5 rounded-xl py-0.5 text-center">

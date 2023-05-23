@@ -2,7 +2,6 @@ import "./App.css";
 import "./Dashboard.css";
 import TopBar from "./TopBar";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import gradient from "random-gradient";
 
 import Heatmap from "./Heatmap";

@@ -19,13 +19,13 @@ import gradient from "random-gradient";
 function Special() {
   const shineAnimation = keyframes`
   0% {
-    opacity: 0;
+    opacity: 0.5;
   }
   50% {
-    opacity: 1;
+    opacity: 0.8;
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 `;
 
@@ -53,7 +53,8 @@ const ShiningDiv = styled(motion.div)`
   }
 
   &:hover::after {
-    animation: ${shineAnimation} 1s backwards;
+    animation: ${shineAnimation} 0.25s backwards 1;
+    opacity: 1;
   }
 `;
 
