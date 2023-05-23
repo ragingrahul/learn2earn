@@ -135,9 +135,10 @@ const ShiningDiv = styled(motion.div)`
                     onMouseLeave={handleHoverEnd}
                     className="bg-gray-900 grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3"
                   >
-                    <div
+                    <motion.div
                       className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
                       style={{ background: gradient(course.name) }}
+                      whileHover={{boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `, opacity: "90%"}}
                     />
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center justify-between mb-1 text-lg font-bold text-left 2xl:text-2xl">
