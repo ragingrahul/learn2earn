@@ -152,7 +152,9 @@ function Special() {
                           </div>
                         </div>
                         {reduxStore.cart.cart[course.name] ? (
-                          <button
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
                             onClick={() =>
                               dispatch(
                                 removeFromCart({
@@ -163,9 +165,11 @@ function Special() {
                             }
                           >
                             <XCircleFill />
-                          </button>
+                          </motion.button>
                         ) : (
-                          <button
+                          <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ scale: 1.1 }}
                             onClick={() =>
                               dispatch(
                                 addToCart({
@@ -176,7 +180,7 @@ function Special() {
                             }
                           >
                             <PlusCircleFill />
-                          </button>
+                          </motion.button>
                         )}
                       </div>
                       <div className="text-sm text-left 2xl:text-lg">
