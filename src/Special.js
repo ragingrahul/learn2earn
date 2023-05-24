@@ -6,6 +6,8 @@ import InputGroup from "react-bootstrap/InputGroup";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "./redux/actions";
 import {
   ClockFill,
   Search,
@@ -13,20 +15,20 @@ import {
   Reception4,
   PersonFill,
   PlusCircleFill,
+  XCircleFill,
 } from "react-bootstrap-icons";
 import gradient from "random-gradient";
 
-function Special() {
-  const shineAnimation = keyframes`
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+const shineAnimation = keyframes`
+0% {
+  opacity: 0.5;
+}
+50% {
+  opacity: 0.8;
+}
+100% {
+  opacity: 1;
+}
 `;
 
 const ShiningDiv = styled(motion.div)`
@@ -53,46 +55,42 @@ const ShiningDiv = styled(motion.div)`
   }
 
   &:hover::after {
-    animation: ${shineAnimation} 1s backwards;
+    animation: ${shineAnimation} 0.25s backwards 1;
+    opacity: 1;
   }
 `;
 
+function Special() {
+  const dispatch = useDispatch();
+  const reduxStore = useSelector((state) => state);
 
   const courses = [
     {
-      name: "Machine Learning",
+      name: "Machine Learning Speciality",
       description:
         "Learn Machine Learning from the best in the industry through our advanced course",
     },
     {
-      name: "Web Development",
+      name: "Web Development Speciality",
       description: "Learn Web Development from the best in the industry",
     },
     {
-      name: "App Development",
+      name: "App Development Speciality",
       description: "Learn App Development from the best in the industry",
     },
     {
-      name: "Data Science",
+      name: "Data Science Speciality",
       description: "Learn Data Science from the best in the industry",
     },
     {
-      name: "Artificial Intelligence",
+      name: "Artificial Intelligence Speciality",
       description:
         "Learn Artificial Intelligence from the best in the industry",
     },
     {
-      name: "Cyber Security",
+      name: "Cyber Security Speciality",
       description:
         "Learn Cyber Security through various lessons from licensed instructors",
-    },
-    {
-      name: "Ethical Hacking",
-      description: "Learn Ethical Hacking from the best in the industry",
-    },
-    {
-      name: "Game Development",
-      description: "Learn Game Development from the best in the industry",
     },
   ];
 
@@ -104,7 +102,7 @@ const ShiningDiv = styled(motion.div)`
       <div className="bgGrad">
         <TopBar />
         <br></br>
-        <header className="App-header">
+        <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
             <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">
               Specializations
@@ -138,7 +136,10 @@ const ShiningDiv = styled(motion.div)`
                     <motion.div
                       className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
                       style={{ background: gradient(course.name) }}
-                      whileHover={{boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `, opacity: "90%"}}
+                      whileHover={{
+                        boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `,
+                        opacity: "90%",
+                      }}
                     />
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center justify-between mb-1 text-lg font-bold text-left 2xl:text-2xl">
@@ -150,9 +151,37 @@ const ShiningDiv = styled(motion.div)`
                             {course.name}
                           </div>
                         </div>
-                        <button>
-                          <PlusCircleFill />
-                        </button>
+                        {reduxStore.cart.cart[course.name] ? (
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() =>
+                              dispatch(
+                                removeFromCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <XCircleFill />
+                          </motion.button>
+                        ) : (
+                          <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ scale: 1.1 }}
+                            onClick={() =>
+                              dispatch(
+                                addToCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <PlusCircleFill />
+                          </motion.button>
+                        )}
                       </div>
                       <div className="text-sm text-left 2xl:text-lg">
                         {course.description}

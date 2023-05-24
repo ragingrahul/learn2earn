@@ -4,6 +4,9 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "./redux/actions";
+import { motion } from "framer-motion";
 import {
   ClockFill,
   Search,
@@ -11,12 +14,14 @@ import {
   Reception4,
   PersonFill,
   PlusCircleFill,
+  XCircleFill,
 } from "react-bootstrap-icons";
 import gradient from "random-gradient";
 
 function Courses() {
   const [scourse, setSCourse] = useState(null);
-
+  const dispatch = useDispatch();
+  const reduxStore = useSelector((state) => state);
   const [modalState, setModalState] = useState(false);
   const [openAccordion, setOpenAccordion] = useState(false);
 
@@ -265,7 +270,7 @@ function Courses() {
       <div className="bgGrad">
         <TopBar />
         <br></br>
-        <header className="App-header">
+        <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
             <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">
               Courses
@@ -347,9 +352,37 @@ function Courses() {
                             {course.name}
                           </div>
                         </div>
-                        <button>
-                          <PlusCircleFill />
-                        </button>
+                        {reduxStore.cart.cart[course.name] ? (
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            whileTap={{ scale: 0.9 }}
+                            onClick={() =>
+                              dispatch(
+                                removeFromCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <XCircleFill />
+                          </motion.button>
+                        ) : (
+                          <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            whileHover={{ scale: 1.1 }}
+                            onClick={() =>
+                              dispatch(
+                                addToCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <PlusCircleFill />
+                          </motion.button>
+                        )}
                       </div>
                       <div className="text-sm text-left 2xl:text-lg">
                         {course.description}
