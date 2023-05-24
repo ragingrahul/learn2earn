@@ -48,11 +48,11 @@ function TopBar() {
 
   useEffect(() => {
     displayNotification(error);
-    console.log(error)
+    console.log(error);
   }, [reduxStore.walletAdd.address, error]);
 
   function displayNotification(mes) {
-    console.log(mes)
+    console.log(mes);
     if (error === false) {
       if (reduxStore.walletAdd.address) {
         return (
@@ -109,20 +109,35 @@ function TopBar() {
             <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           </Nav>
           <div className="flex gap-1">
-          <Nav>
-            {!reduxStore.walletAdd.address ? (
-              <Nav.Link onClick={() => requestAccount()}>
-                Connect Wallet
+            <Nav>
+              {!reduxStore.walletAdd.address ? (
+                <Nav.Link onClick={() => requestAccount()}>
+                  Connect Wallet
+                </Nav.Link>
+              ) : (
+                <Nav.Link
+                  onClick={() => removeAccount()}
+                  className="!flex !gap-2 items-center"
+                >
+                  {reduxStore.walletAdd.address.slice(0, 4)}...
+                  {reduxStore.walletAdd.address.slice(-4)} <XCircleFill />
+                </Nav.Link>
+              )}
+            </Nav>
+            <Nav className="items-center flex">
+              <Nav.Link href="#/cart">
+                <div className="flex">
+                  <span className="relative">
+                    Cart
+                    {Object.keys(reduxStore.cart.cart).length !== 0 && (
+                      <span className="absolute top-0 -right-1 -mt-2 -mr-2 px-1 text-xs bg-red-500 text-white rounded-full">
+                        {Object.keys(reduxStore.cart.cart).length}
+                      </span>
+                    )}
+                  </span>
+                </div>
               </Nav.Link>
-            ) : (
-              <Nav.Link onClick={() => removeAccount()} className="!flex !gap-2 items-center">
-              {reduxStore.walletAdd.address.slice(0, 4)}...{reduxStore.walletAdd.address.slice(-4, )}   <XCircleFill/> 
-              </Nav.Link>
-            )}
-          </Nav>
-          <Nav className="items-center flex">
-          <Nav.Link href="#/cart">Cart</Nav.Link>
-          </Nav>
+            </Nav>
           </div>
         </Container>
       </Navbar>
