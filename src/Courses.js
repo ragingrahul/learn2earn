@@ -4,6 +4,8 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart, removeFromCart } from "./redux/actions";
 import {
   ClockFill,
   Search,
@@ -11,11 +13,14 @@ import {
   Reception4,
   PersonFill,
   PlusCircleFill,
+  XCircleFill,
 } from "react-bootstrap-icons";
 import gradient from "random-gradient";
 
 function Courses() {
   const [scourse, setSCourse] = useState(null);
+  const dispatch = useDispatch();
+  const reduxStore = useSelector((state) => state);
   const schools = [
     "Artifical Intelligence",
     "Web Development",
@@ -67,7 +72,7 @@ function Courses() {
       <div className="bgGrad">
         <TopBar />
         <br></br>
-        <header className="App-header">
+        <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
             <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">
               Courses
@@ -138,7 +143,7 @@ function Courses() {
                 {courses.map((course) => (
                   <div className="bg-gray-900 grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3">
                     <div
-                      className="flex block rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
+                      className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
                       style={{ background: gradient(course.name) }}
                     />
                     <div className="flex flex-col gap-2.5">
@@ -148,9 +153,33 @@ function Courses() {
                             {course.name}
                           </div>
                         </div>
-                        <button>
-                          <PlusCircleFill />
-                        </button>
+                        {reduxStore.cart.cart[course.name] ? (
+                          <button
+                            onClick={() =>
+                              dispatch(
+                                removeFromCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <XCircleFill />
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() =>
+                              dispatch(
+                                addToCart({
+                                  name: course.name,
+                                  price: "$29.99",
+                                })
+                              )
+                            }
+                          >
+                            <PlusCircleFill />
+                          </button>
+                        )}
                       </div>
                       <div className="text-sm text-left 2xl:text-lg">
                         {course.description}

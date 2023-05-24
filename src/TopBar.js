@@ -108,6 +108,7 @@ function TopBar() {
             <Nav.Link href="#/specials">Specializations</Nav.Link>
             <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           </Nav>
+          <div className="flex gap-1">
           <Nav>
             {!reduxStore.walletAdd.address ? (
               <Nav.Link onClick={() => requestAccount()}>
@@ -119,6 +120,10 @@ function TopBar() {
               </Nav.Link>
             )}
           </Nav>
+          <Nav className="items-center flex">
+          <Nav.Link href="#/cart">Cart</Nav.Link>
+          </Nav>
+          </div>
         </Container>
       </Navbar>
     </>
