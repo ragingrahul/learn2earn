@@ -27,14 +27,14 @@ function Cart() {
                     Clear All
                   </div>
                 </div>
-                <div className="bg-gray-900 rounded-xl text-left p-3">
+                <div className="bg-gray-900 rounded-xl text-left p-3 pb-0">
                   <div className="grid grid-cols-[2fr,1fr]">
                     <div className="font-semibold text-lg">Product</div>
                     <div className="font-semibold text-lg border-gray-700 h-full items-center border-l pb-2 pl-5">
                       Price
                     </div>
                   </div>
-                  <div className="text-2xl">
+                  <div className="text-2xl sm:max-h-[325px] xl:max-h-[425px] 2xl:max-h-[725px] overflow-scroll">
                     {Object.values(reduxStore.cart.cart).map((course) => (
                       <motion.div
                         whileHover={{ boxShadow: "0px 5px 8px black" }}
@@ -42,7 +42,7 @@ function Cart() {
                       >
                         <div className="font-semibold text-2xl h-40 items-center flex p-2 gap-4">
                           <motion.div
-                            className="flex lg:hidden xl:block h-[75%] aspect-square gradSquare rounded-xl"
+                            className="flex block h-[75%] aspect-square gradSquare rounded-xl"
                             style={{ background: gradient(course.name) }}
                             whileHover={{
                               boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `,
