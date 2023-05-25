@@ -126,11 +126,11 @@ function Cart() {
                     </div>
                   </div>
                 </div>
-
+<div className="flex justify-center">
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="ml-auto mr-auto  p-[0.9rem] text-lg lg:text-2xl font-semibold bg-gray-900 rounded-xl"
+                  className="ml-auto fixed h-lg:static bottom-7 mr-auto bg-gray-400 bg-opacity-20  p-[0.9rem] text-lg lg:text-2xl font-semibold backdrop-blur-md rounded-xl"
                 >
                   <div
                     className="flex flex-row items-center gap-2"
@@ -139,6 +139,7 @@ function Cart() {
                     Complete Payment <ArrowRightCircleFill />
                   </div>
                 </motion.button>
+                </div>
               </>
             ) : (
               <div className="justify-center items-center flex h-[80vh] flex-col gap-3 font-semibold">
