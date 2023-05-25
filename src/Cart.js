@@ -130,7 +130,7 @@ function Cart() {
                 <motion.button
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="ml-auto fixed h-lg:static bottom-7 mr-auto bg-gray-400 bg-opacity-20  p-[0.9rem] text-lg lg:text-2xl font-semibold backdrop-blur-md rounded-xl"
+                  className="ml-auto fixed shadow-md shadow-gray-800 h-lg:static bottom-7 mr-auto bg-gray-400 bg-opacity-20  p-[0.9rem] text-lg lg:text-2xl font-semibold backdrop-blur-md rounded-xl"
                 >
                   <div
                     className="flex flex-row items-center gap-2"
