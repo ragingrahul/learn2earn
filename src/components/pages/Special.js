@@ -1,6 +1,6 @@
-import "./App.css";
-import "./Special.css";
-import TopBar from "./TopBar";
+import "./../../App.css";
+import "./../../styles/Special.css";
+import TopBar from "../molecules/TopBar";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { motion } from "framer-motion";
@@ -29,34 +29,33 @@ function Special() {
   }
 `;
 
-const ShiningDiv = styled(motion.div)`
-  position: relative;
-  overflow: hidden;
+  const ShiningDiv = styled(motion.div)`
+    position: relative;
+    overflow: hidden;
 
-  &:after {
-    content: "";
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 120%;
-    height: 120%;
-    background: linear-gradient(
-      to bottom right,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0.15) 10%,
-      rgba(255, 255, 255, 0.1) 20%,
-      rgba(255, 255, 255, 0.05) 30%,
-      rgba(255, 255, 255, 0) 40%
-    );
-    opacity: 0;
-    pointer-events: none;
-  }
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10%;
+      left: -10%;
+      width: 120%;
+      height: 120%;
+      background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.15) 10%,
+        rgba(255, 255, 255, 0.1) 20%,
+        rgba(255, 255, 255, 0.05) 30%,
+        rgba(255, 255, 255, 0) 40%
+      );
+      opacity: 0;
+      pointer-events: none;
+    }
 
-  &:hover::after {
-    animation: ${shineAnimation} 1s backwards;
-  }
-`;
-
+    &:hover::after {
+      animation: ${shineAnimation} 1s backwards;
+    }
+  `;
 
   const courses = [
     {
@@ -138,7 +137,10 @@ const ShiningDiv = styled(motion.div)`
                     <motion.div
                       className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
                       style={{ background: gradient(course.name) }}
-                      whileHover={{boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `, opacity: "90%"}}
+                      whileHover={{
+                        boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `,
+                        opacity: "90%",
+                      }}
                     />
                     <div className="flex flex-col gap-2.5">
                       <div className="flex items-center justify-between mb-1 text-lg font-bold text-left 2xl:text-2xl">

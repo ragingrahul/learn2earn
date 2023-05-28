@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addWallet, removeWallet } from "./redux/actions";
+import { addWallet, removeWallet } from "../../redux/actions";
 import Toast from "react-bootstrap/Toast";
 import ToastContainer from "react-bootstrap/ToastContainer";
 
@@ -47,12 +47,12 @@ function TopBar() {
 
   useEffect(() => {
     displayNotification(error);
-    console.log(error)
+    console.log(error);
   }, [reduxStore.walletAdd.address, error]);
 
   function displayNotification(mes) {
-    console.log(mes)
-    if (error == false) {
+    console.log(mes);
+    if (error === false) {
       if (reduxStore.walletAdd.address) {
         return (
           <div className="text-xs text-green-800 bg-green-200 font-semibold px-1.5 rounded-xl py-0.5 text-center">

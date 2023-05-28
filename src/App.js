@@ -1,7 +1,7 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "./Home.css";
-import TopBar from "./TopBar";
+import TopBar from "./components/molecules/TopBar";
 import { ArrowRightCircleFill } from "react-bootstrap-icons";
 
 function App() {
@@ -15,7 +15,9 @@ function App() {
               <div className="md:max-w-[650px] sm:max-w-[80vw]">
                 <h1 className="text-6xl lg:text-8xl">
                   Get{" "}
-                  <span className="gradHighlight pr-4 pl-4 italic">Rewarded</span>
+                  <span className="gradHighlight pr-4 pl-4 italic">
+                    Rewarded
+                  </span>
                 </h1>
                 <h1 className="text-6xl lg:text-8xl">for Learning</h1>
                 <h4 className="lg:text-3xl">
@@ -25,19 +27,25 @@ function App() {
               </div>
               <div className="flex flex-row gap-10">
                 <button className="gradHighlight p-[0.9rem] text-lg lg:text-2xl font-semibold hover:bg-black">
-                  <div className="flex flex-row items-center gap-2" onClick={() => window.location.href = "#/courses"}>
+                  <div
+                    className="flex flex-row items-center gap-2"
+                    onClick={() => (window.location.href = "#/courses")}
+                  >
                     Go to Courses <ArrowRightCircleFill />
                   </div>
                 </button>
                 <button className="gradHighlight p-[0.9rem] text-lg lg:text-2xl font-semibold hover:bg-black">
-                  <div className="flex flex-row items-center gap-2" onClick={() => window.location.href = "#/specials"}>
+                  <div
+                    className="flex flex-row items-center gap-2"
+                    onClick={() => (window.location.href = "#/specials")}
+                  >
                     Go to Specializations <ArrowRightCircleFill />
                   </div>
                 </button>
               </div>
             </div>
             <div className="flex justify-center">
-            <img src={logo} className="App-logo" alt="logo" />
+              <img src={logo} className="App-logo" alt="logo" />
             </div>
           </div>
         </header>

@@ -1,11 +1,11 @@
-import "./App.css";
-import "./Dashboard.css";
-import TopBar from "./TopBar";
+import "./../../App.css";
+import "./../../styles/Dashboard.css";
+import TopBar from "../molecules/TopBar";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import gradient from "random-gradient";
 
-import Heatmap from "./Heatmap";
+import Heatmap from "../../Heatmap";
 
 function Dashboard() {
   const reduxStore = useSelector((state) => state);
@@ -39,7 +39,9 @@ function Dashboard() {
                   <div className="text-xs text-green-800 bg-green-200 font-semibold px-1.5 rounded-xl py-0.5">
                     Connected
                   </div>
-                  <div className="font-medium">Wallet: {reduxStore.walletAdd.address}</div>
+                  <div className="font-medium">
+                    Wallet: {reduxStore.walletAdd.address}
+                  </div>
                 </div>
               )}
             </div>
