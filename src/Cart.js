@@ -1,5 +1,5 @@
 import React from "react";
-import TopBar from "./TopBar";
+import TopBar from "./components/molecules/TopBar";
 import gradient from "random-gradient";
 import { motion } from "framer-motion";
 import { ArrowRightCircleFill, XCircleFill } from "react-bootstrap-icons";
@@ -42,7 +42,7 @@ function Cart() {
                       >
                         <div className="font-semibold text-2xl h-40 items-center flex p-2 gap-4">
                           <motion.div
-                            className="flex block h-[75%] aspect-square gradSquare rounded-xl"
+                            className="block h-[75%] aspect-square gradSquare rounded-xl"
                             style={{ background: gradient(course.name) }}
                             whileHover={{
                               boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `,
@@ -126,19 +126,19 @@ function Cart() {
                     </div>
                   </div>
                 </div>
-<div className="flex justify-center">
-                <motion.button
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="ml-auto fixed shadow-md shadow-gray-800 h-lg:static bottom-7 mr-auto bg-gray-400 bg-opacity-20  p-[0.9rem] text-lg lg:text-2xl font-semibold backdrop-blur-md rounded-xl"
-                >
-                  <div
-                    className="flex flex-row items-center gap-2"
-                    onClick={() => (window.location.href = "#/cart")}
+                <div className="flex justify-center">
+                  <motion.button
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="ml-auto fixed shadow-md shadow-gray-800 h-lg:static bottom-7 mr-auto bg-gray-400 bg-opacity-20  p-[0.9rem] text-lg lg:text-2xl font-semibold backdrop-blur-md rounded-xl"
                   >
-                    Complete Payment <ArrowRightCircleFill />
-                  </div>
-                </motion.button>
+                    <div
+                      className="flex flex-row items-center gap-2"
+                      onClick={() => (window.location.href = "#/cart")}
+                    >
+                      Complete Payment <ArrowRightCircleFill />
+                    </div>
+                  </motion.button>
                 </div>
               </>
             ) : (

@@ -1,13 +1,13 @@
-import "./App.css";
-import "./Special.css";
-import TopBar from "./TopBar";
+import "./../../App.css";
+import "./../../styles/Special.css";
+import TopBar from "../molecules/TopBar";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from "./redux/actions";
+import { addToCart, removeFromCart } from "./../../redux/actions";
 import {
   ClockFill,
   Search,
