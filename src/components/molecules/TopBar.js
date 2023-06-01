@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addWallet, removeWallet } from "../../redux/actions";
 import Toast from "react-bootstrap/Toast";
 import ToastContainer from "react-bootstrap/ToastContainer";
+import { XCircleFill } from "react-bootstrap-icons";
 
 function TopBar() {
   const dispatch = useDispatch();
@@ -107,17 +108,37 @@ function TopBar() {
             <Nav.Link href="#/specials">Specializations</Nav.Link>
             <Nav.Link href="#/dashboard">Dashboard</Nav.Link>
           </Nav>
-          <Nav>
-            {!reduxStore.walletAdd.address ? (
-              <Nav.Link onClick={() => requestAccount()}>
-                Connect Wallet
+          <div className="flex gap-1">
+            <Nav>
+              {!reduxStore.walletAdd.address ? (
+                <Nav.Link onClick={() => requestAccount()}>
+                  Connect Wallet
+                </Nav.Link>
+              ) : (
+                <Nav.Link
+                  onClick={() => removeAccount()}
+                  className="!flex !gap-2 items-center"
+                >
+                  {reduxStore.walletAdd.address.slice(0, 4)}...
+                  {reduxStore.walletAdd.address.slice(-4)} <XCircleFill />
+                </Nav.Link>
+              )}
+            </Nav>
+            <Nav className="items-center flex">
+              <Nav.Link href="#/cart">
+                <div className="flex">
+                  <span className="relative">
+                    Cart
+                    {Object.keys(reduxStore.cart.cart).length !== 0 && (
+                      <span className="absolute top-0 -right-1 -mt-2 -mr-2 px-1 text-xs bg-red-500 text-white rounded-full">
+                        {Object.keys(reduxStore.cart.cart).length}
+                      </span>
+                    )}
+                  </span>
+                </div>
               </Nav.Link>
-            ) : (
-              <Nav.Link onClick={() => removeAccount()}>
-                Disconnect Wallet
-              </Nav.Link>
-            )}
-          </Nav>
+            </Nav>
+          </div>
         </Container>
       </Navbar>
     </>

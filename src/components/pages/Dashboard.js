@@ -2,7 +2,6 @@ import "./../../App.css";
 import "./../../styles/Dashboard.css";
 import TopBar from "../molecules/TopBar";
 import { useSelector } from "react-redux";
-import { useEffect } from "react";
 import gradient from "random-gradient";
 
 import Heatmap from "../../Heatmap";
@@ -40,7 +39,8 @@ function Dashboard() {
                     Connected
                   </div>
                   <div className="font-medium">
-                    Wallet: {reduxStore.walletAdd.address}
+                    Wallet: {reduxStore.walletAdd.address.slice(0, 4)}...
+                    {reduxStore.walletAdd.address.slice(-4)}{" "}
                   </div>
                 </div>
               )}
