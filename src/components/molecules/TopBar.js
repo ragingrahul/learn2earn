@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addWallet, removeWallet } from "./redux/actions";
+import { addWallet, removeWallet } from "../../redux/actions";
 import Toast from "react-bootstrap/Toast";
 import ToastContainer from "react-bootstrap/ToastContainer";
 import { XCircleFill } from "react-bootstrap-icons";
