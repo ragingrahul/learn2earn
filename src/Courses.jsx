@@ -83,11 +83,11 @@ function Courses() {
         <br></br>
         <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
-            <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">
+            <div className="italic text-left font-semibold text-6xl p-3 text-gray-100">
               Courses
             </div>
-            <div className="bg-gray-950 p-4 rounded-xl">
-              <div className="text-left flex flex-col gap-2 mb-3">
+            <div className="bg-gray-950 p-2 sm:p-4 rounded-xl">
+              <div className="text-left flex flex-col gap-2 mb-3 p-2">
                 <div className="max-w-[500px]">
                   <InputGroup className="mb-0">
                     <InputGroup.Text className="!bg-gray-900 !border-gray-800 !text-gray-600">
@@ -151,9 +151,9 @@ function Courses() {
               </div>
               <div className="grid justify-center gap-3 lg:grid-cols-2">
                 {courses.map((course) => (
-                  <div className="bg-gray-900 grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3">
+                  <div className="bg-gray-900 sm:grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3">
                     <div
-                      className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
+                      className="rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%] hidden sm:block"
                       style={{ background: gradient(course.name) }}
                     />
                     <div className="flex flex-col gap-2.5">
