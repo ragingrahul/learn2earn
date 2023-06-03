@@ -83,7 +83,7 @@ function Courses() {
         <br></br>
         <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
-            <div className="italic text-left font-semibold text-6xl p-3 text-gray-100">
+          <div className="italic text-left font-semibold text-5xl p-3 text-gray-100">
               Courses
             </div>
             <div className="bg-gray-950 p-2 sm:p-4 rounded-xl">

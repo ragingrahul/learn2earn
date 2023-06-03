@@ -104,13 +104,13 @@ function Special() {
         <br></br>
         <header className="App-header min-h-[98vh]">
           <div className="w-fit sm:w-[80vw] max-w-[1700px] mt-[3.5rem] h-full flex flex-col gap-3 drop-shadow-2x">
-            <div className="italic text-left font-semibold text-6xl p-2 text-gray-100">
+          <div className="italic text-left font-semibold text-5xl p-3 text-gray-100">
               Specializations
             </div>
-            <div className="bg-gray-950 p-4 rounded-xl">
-              <div>
+            <div className="bg-gray-950 p-2 sm:p-4 rounded-xl">
+              <div className="text-left flex flex-col gap-2 mb-3 p-2">
                 <div className="max-w-[500px]">
-                  <InputGroup className="mb-3">
+                  <InputGroup className="mb-0">
                     <InputGroup.Text className="!bg-gray-900 !border-gray-800 !text-gray-600">
                       <Search></Search>
                     </InputGroup.Text>
@@ -131,10 +131,10 @@ function Special() {
                       boxShadow: "0 0 30px rgba(0, 0, 0, 0.7)",
                     }}
                     onMouseLeave={handleHoverEnd}
-                    className="bg-gray-900 grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3"
+                    className="bg-gray-900 sm:grid grid-child min-h-fit 2xl:h-[300px] lg:grid-cols-1 grid-cols-[1fr_2fr] xl:grid-cols-[1fr_2fr] rounded-xl gap-4 p-3"
                   >
                     <motion.div
-                      className="flex rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%]"
+                       className="rounded-tr-[5rem] lg:hidden xl:block h-full min-w-[5rem] gradSquare max-h-[100%] hidden sm:block"
                       style={{ background: gradient(course.name) }}
                       whileHover={{
                         boxShadow: `0 0 15px rgba(0, 0, 0, 0.7)  `,
@@ -186,8 +186,8 @@ function Special() {
                       <div className="text-sm text-left 2xl:text-lg">
                         {course.description}
                       </div>
-                      <div className="flex flex-row gap-4 p-2 font-semibold whitespace-pre bg-gray-800 rounded-xl">
-                        <div className="text-[1rem]  2xl:text-[1.2rem] flex flex-row gap-2 items-center">
+                      <div className="flex flex-row gap-4 p-2 font-semibold whitespace-pre bg-gray-800 rounded-xl overflow-scroll">
+                        <div className="text-[1rem] 2xl:text-[1.2rem] flex flex-row gap-2 items-center">
                           <ClockFill />3 Months
                         </div>
                         <div className="text-[1rem] 2xl:text-[1.2rem] flex flex-row gap-2 items-center">
