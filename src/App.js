@@ -3,14 +3,17 @@ import "./App.css";
 import "./Home.css";
 import TopBar from "./components/molecules/TopBar";
 import { ArrowRightCircleFill } from "react-bootstrap-icons";
+import bloom from "./homeImgs/bloom.png";
+import moneyKey from "./homeImgs/moneyKey.png";
+import problems from "./homeImgs/problems.jpg";
 
 function App() {
   return (
     <div className="App">
       <div className="bgGrad">
         <TopBar />
-        <header className="App-header h-[100vh]">
-          <div className="xl:flex xl:flex-row gap-2 justify-center p-[5vw] flex flex-col-reverse">
+        <header className="App-header xl:h-[100vh]">
+          <div className="xl:flex xl:flex-row justify-center gap-5 p-[5vw] flex flex-col-reverse">
             <div className="flex justify-center flex-col gap-8 sm:text-center md:text-left items-center md:items-start">
               <div className="md:max-w-[650px] sm:max-w-[80vw] tracking-tight">
                 <h1 className="text-4xl md:text-6xl lg:text-8xl whitespace-pre tracking-tight">
@@ -46,8 +49,26 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="flex justify-center">
-              <img src={logo} className="App-logo" alt="logo" />
+            <div className="flex justify-center mt-20 xl:mt-0">
+              <div className="grid grid-cols-2 gap-3 items-center">
+                <img
+                  src={moneyKey}
+                  className="object-scale-down max-w-[150px]   md:max-w-[200px] xl:max-w-full xl:w-[350px] rounded-2xl overflow-hidden"
+                  alt="moneyKey"
+                />
+                <div className="grid grid-rows-2 gap-3">
+                  <img
+                    src={bloom}
+                    className="object-scale-down  max-w-[140px]  md:max-w-[180px]  xl:max-w-full xl:w-[300px] rounded-2xl overflow-hidden"
+                    alt="bloom"
+                  />
+                  <img
+                    src={problems}
+                    className="object-scale-down max-w-[140px]  md:max-w-[180px]  xl:max-w-full xl:w-[300px] rounded-2xl overflow-hidden"
+                    alt="problems"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </header>
@@ -55,7 +76,7 @@ function App() {
       <div className="gradHeader max-h-[300px] gap-4 md:gap-15 lg:gap-20 lg:h-[25vh] p-[1vw] py-10">
         <div>
           <div className="font-bold md:text-lg">Students Helped</div>
-          <div className="text-xl md:text-2xl font-bold">20,000+</div>
+          <div className="text-xl font-bold">20,000+</div>
         </div>
         <div>
           <div className="font-bold md:text-lg">Courses</div>
