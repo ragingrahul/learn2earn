@@ -10,8 +10,8 @@ function App() {
       <div className="bgGrad">
         <TopBar />
         <header className="App-header h-[100vh]">
-          <div className="lg:flex lg:flex-row gap-2 justify-center p-[5vw] flex flex-col-reverse">
-            <div className="flex flex-col gap-8 sm:text-center md:text-left items-center md:items-start">
+          <div className="xl:flex xl:flex-row gap-2 justify-center p-[5vw] flex flex-col-reverse">
+            <div className="flex justify-center flex-col gap-8 sm:text-center md:text-left items-center md:items-start">
               <div className="md:max-w-[650px] sm:max-w-[80vw]">
                 <h1 className="text-4xl md:text-6xl lg:text-8xl whitespace-pre">
                   Get{" "}
