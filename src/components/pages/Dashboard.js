@@ -27,10 +27,10 @@ function Dashboard() {
       <div className="bgGrad">
         <TopBar />
         <br></br>
-        <header className="App-header">
+        <header className="App-header mt-3">
           <div className="w-fit sm:w-[80vw] min-h-[90vh] max-w-[1400px] mt-[3.5rem] md:mt-[1rem] h-full flex flex-col gap-3 drop-shadow-2x">
             <div className="flex gap-4 items-center">
-              <div className="text-left font-semibold italic w-fit">
+              <div className="text-left font-semibold italic w-fit text-3xl tracking-tight">
                 Your Dashboard
               </div>
               {reduxStore.walletAdd.address && (
@@ -45,9 +45,9 @@ function Dashboard() {
                 </div>
               )}
             </div>
-            <div className="grid grid-rows-2 gap-8">
-              <div className="grid grid-cols-2 gap-8">
-                <div className="bg-gray-800 h-72 rounded-xl flex flex-col justify-center">
+            <div className="grid lg:grid-rows-2 gap-8">
+              <div className="grid md:grid-cols-2 gap-8 justify-center">
+                <div className="bg-gray-800 md:h-72 h-64 rounded-xl flex flex-col justify-center">
                   [Badge]
                 </div>
                 <div
@@ -55,29 +55,31 @@ function Dashboard() {
                   id="test"
                 >
                   <div className="text-base font-bold p-1">Activity Graph</div>
+                  <div className="w-[200px] md:w-[275px] lg:w-[80%] flex justify-center">
                   <Heatmap />
+                  </div>
                 </div>
               </div>
-              <div className="grid grid-cols-[1fr,1.2fr] gap-8">
+              <div className="lg:grid flex flex-col lg:grid-cols-[1fr,1.2fr] gap-8">
                 <div className="bg-gray-800 h-72 rounded-xl flex flex-col p-2 gap-2 overflow-y-scroll">
-                  <div className="font-semibold text-left backdrop-blur-xl rounded-xl pr-2 pl-2 text-base fixed">
+                  <div className="font-medium text-left backdrop-blur-xl rounded-xl pr-2 pl-2 text-base bg-black w-fit py-0.5">
                     Current Courses
                   </div>
-                  <div className="mt-4"></div>
+                  <div className=""></div>
                   {courses.map((course) => (
                     <div
                       key={course.name}
                       className="bg-black rounded-xl grid grid-cols-[1fr,4fr] p-3 gap-4"
                     >
                       <div
-                        className="h-20 rounded-xl"
+                        className="min-h-[5rem] rounded-xl"
                         style={{ background: gradient(course.name) }}
                       ></div>
                       <div className="text-left flex justify-center flex-col gap-2">
                         <div className="font-semibold text-xl">
                           {course.name}
                         </div>
-                        <div className="flex flex-row text-sm gap-3">
+                        <div className="flex flex-row flex-wrap text-sm gap-3">
                           <div className="bg-gray-800 rounded-xl w-fit pr-2 pl-2">
                             Modules Left: 10
                           </div>
@@ -89,8 +91,8 @@ function Dashboard() {
                     </div>
                   ))}
                 </div>
-                <div className="bg-gray-800 h-72 rounded-xl grid grid-cols-2 gap-2 p-2">
-                  <div className="bg-black rounded-xl flex flex-col justify-center">
+                <div className="bg-gray-800 rounded-xl grid md:grid-cols-2 gap-2 p-2">
+                  <div className="bg-black rounded-xl flex flex-col justify-center min-h-[200px]">
                     [Skill Tree]
                   </div>
                   <div className="grid grid-rows-2 gap-2 rounded-xl">

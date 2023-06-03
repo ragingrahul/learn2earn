@@ -12,14 +12,14 @@ function App() {
         <header className="App-header h-[100vh]">
           <div className="xl:flex xl:flex-row gap-2 justify-center p-[5vw] flex flex-col-reverse">
             <div className="flex justify-center flex-col gap-8 sm:text-center md:text-left items-center md:items-start">
-              <div className="md:max-w-[650px] sm:max-w-[80vw]">
-                <h1 className="text-4xl md:text-6xl lg:text-8xl whitespace-pre">
+              <div className="md:max-w-[650px] sm:max-w-[80vw] tracking-tight">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl whitespace-pre tracking-tight">
                   Get{" "}
                   <span className="gradHighlight pr-4 pl-4 italic">
                     Rewarded
                   </span>
                 </h1>
-                <h1 className="text-4xl md:text-6xl lg:text-8xl">
+                <h1 className="text-4xl md:text-6xl lg:text-8xl tracking-tight">
                   for Learning
                 </h1>
                 <h4 className="text-base md:text-3xl px-10 sm:px-20  md:px-0">
