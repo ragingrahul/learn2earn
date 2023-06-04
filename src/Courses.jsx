@@ -237,7 +237,10 @@ function Courses() {
                       </div>
                       <div className="flex flex-row gap-2">
                         <button
-                          onClick={()=>window.location.href = "#/viewcourse"}
+                          onClick={()=>{
+                            let newString=course.name.replace(/ /g, "")
+                            window.location.href = `#/viewcourse/${newString}`
+                          }}
                           className="gradHighlight p-[0.5rem] text-sm lg:text-xl font-semibold max-w-fit"
                         >
                           <div className="flex flex-row items-center gap-2 text-sm">
