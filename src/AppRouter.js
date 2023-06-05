@@ -20,7 +20,7 @@ function AppRouter() {
         <Route path="/courses" element={<Courses />} />
         <Route path="/course" element={<Course />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/viewcourse" element={<ViewCourse />} />
+        <Route path="/viewcourse/:viewcourseId" element={<ViewCourse />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/" element={<App />} />
       </Routes>
