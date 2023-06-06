@@ -8,15 +8,7 @@ function ViewCourseInfo() {
                     <h2 className="text-[32px] font-bold my-4">
                         Machine Learning
                     </h2>
-                    <p className="mb-4">
-                        Machine learning is a branch of artificial intelligence that focuses
-                        on developing algorithms and models capable of learning from data and
-                        making predictions or decisions without being explicitly programmed.
-                        It involves creating mathematical models and algorithms that enable
-                        computers to recognize patterns, extract meaningful information, and
-                        make accurate predictions or decisions based on the available data.
-                    </p>
-                    <div className="bg-gray-800 flex justify-between items-center py-2 px-4 rounded-lg">
+                    <div className="bg-gray-800 flex justify-between items-center py-2 px-4 rounded-lg flex-wrap">
                         <div className="flex justify-between items-center">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
