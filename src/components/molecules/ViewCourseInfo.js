@@ -100,8 +100,19 @@ function ViewCourseInfo() {
 
                 <div className='flex flex-col w-1/2 p-7 items-center border-[1px] border-slate-600 rounded-xl'>
 
-                    <h2 className="bg-Bggradient p-2 text-center bg-cover w-[70%] bg-no-repeat whitespace-nowrap rounded-xl border-[1px] border-slate-500"> $1000</h2>
-
+                    <h2 className="bg-Bggradient p-2 text-center bg-cover w-[70%] bg-no-repeat whitespace-nowrap rounded-xl border-[1px] border-slate-500 mb-4"> $1000</h2>
+                    
+                    <div className='flex flex-col justify-between w-full h-full border p-3 rounded-2xl'>
+                        <h1 className='text-lg font-thin'>
+                            Your Rank
+                        </h1>
+                        <div className='flex flex-row justify-between items-end'>
+                            <h1 className='text-3xl font-semibold'>
+                                162
+                            </h1>
+                            <h1 className='text-lg font-thin underline-offset-2 decoration-solid underline'>Leaderboard</h1>
+                        </div>
+                    </div>
                 </div>
 
             </div>
