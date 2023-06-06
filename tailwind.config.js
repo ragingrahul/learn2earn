@@ -17,6 +17,10 @@ export default {
       boxShadow: {
         "gray-200": "0 2px 4px 0 rgba(0, 0, 0, 0.1)",
       },
+      gridTemplateColumns:{
+        sidebar:"300px auto",
+        "sidebar-collapsed":"47px auto",
+      },
     },
   },
   plugins: [],

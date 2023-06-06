@@ -9,6 +9,7 @@ import Dashboard from "./components/pages/Dashboard.js";
 import ViewCourse from "./components/organisms/viewCourse.jsx";
 import Course from "./components/pages/courses/course.jsx";
 import Cart from "./Cart.js";
+import Modules from "./components/pages/Modules.js";
 
 const history = createBrowserHistory();
 
@@ -16,6 +17,7 @@ function AppRouter() {
   return (
     <Router basename="/" history={history}>
       <Routes>
+        <Route path="/modules" element={<Modules/>} />
         <Route path="/specials" element={<Special />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/course" element={<Course />} />
